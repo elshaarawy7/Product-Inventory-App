@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:product_inventory_app/features/inventory/presentation/auth/pages/log_in_page.dart';
 import 'package:provider/provider.dart';
 
 import 'core/constants/app_constants.dart';
@@ -65,7 +66,7 @@ class MyApp extends StatelessWidget {
         title: AppConstants.appName,
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
-        home: const SplashPage(),
+        home:  LoginScreen(),
         onGenerateRoute: (settings) {
           switch (settings.name) {
             case '/add-product':
