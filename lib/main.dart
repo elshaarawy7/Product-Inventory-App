@@ -16,6 +16,7 @@ import 'features/inventory/domain/usecases/get_low_stock_products.dart';
 import 'features/inventory/domain/usecases/update_product.dart';
 import 'features/inventory/presentation/pages/add_edit_product_page.dart';
 import 'features/inventory/presentation/pages/dashboard_page.dart';
+import 'features/inventory/presentation/pages/splash_page.dart';
 import 'features/inventory/presentation/providers/product_provider.dart';
 
 void main() async {
@@ -64,7 +65,7 @@ class MyApp extends StatelessWidget {
         title: AppConstants.appName,
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
-        home: const DashboardPage(),
+        home: const SplashPage(),
         onGenerateRoute: (settings) {
           switch (settings.name) {
             case '/add-product':

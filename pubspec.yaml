@@ -59,6 +59,7 @@ dependencies:
 
   # UUID Generation
   uuid: ^4.3.3
+  simple_animations: ^5.2.0
 
 dev_dependencies:
   flutter_test:
