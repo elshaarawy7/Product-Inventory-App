@@ -1,8 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:product_inventory_app/features/inventory/presentation/auth/pages/log_in_page.dart';
 
-import 'dashboard_page.dart';
+import 'features/inventory/presentation/home/pages/dashboard_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -101,7 +102,7 @@ class _SplashPageState extends State<SplashPage>
     Timer(const Duration(seconds: 3), () {
       if (mounted) {
         Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => const DashboardPage()),
+          MaterialPageRoute(builder: (_) =>  LoginScreen()),
         );
       }
     });
@@ -144,7 +145,7 @@ class _SplashPageState extends State<SplashPage>
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(20),
                               border: Border.all(
-                                color: const Color(0xFF6366F1),
+                                color: Colors.green,
                                 width: 3,
                               ),
                               boxShadow: [
@@ -158,7 +159,7 @@ class _SplashPageState extends State<SplashPage>
                             child: const Icon(
                               Icons.inventory_2,
                               size: 80,
-                              color: Color(0xFF6366F1),
+                              color: Colors.green,
                             ),
                           ),
                         ),

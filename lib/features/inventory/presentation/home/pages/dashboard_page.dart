@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
-import '../providers/product_provider.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/product_provider.dart';
+import '../widgets/app_drawer.dart';
 import '../widgets/stat_card.dart';
 import 'products_list_page.dart';
 
@@ -28,7 +30,11 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Inventory Dashboard'), elevation: 0),
+      appBar: AppBar(
+        title: const Text('Inventory Dashboard'),
+        elevation: 0,
+      ),
+      drawer: const AppDrawer(),
       body: Consumer<ProductProvider>(
         builder: (context, provider, child) {
           if (provider.isLoading) {

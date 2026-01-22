@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:product_inventory_app/features/inventory/presentation/auth/pages/log_in_page.dart';
 import 'package:provider/provider.dart';
 
 import 'core/constants/app_constants.dart';
@@ -15,10 +14,13 @@ import 'features/inventory/domain/usecases/delete_product.dart';
 import 'features/inventory/domain/usecases/get_all_products.dart';
 import 'features/inventory/domain/usecases/get_low_stock_products.dart';
 import 'features/inventory/domain/usecases/update_product.dart';
-import 'features/inventory/presentation/pages/add_edit_product_page.dart';
-import 'features/inventory/presentation/pages/dashboard_page.dart';
-import 'features/inventory/presentation/pages/splash_page.dart';
+import 'features/inventory/presentation/home/pages/add_edit_product_page.dart';
+import 'features/inventory/presentation/home/pages/dashboard_page.dart';
+import 'features/inventory/presentation/home/pages/developer_support_page.dart';
+import 'features/inventory/presentation/home/pages/products_list_page.dart';
+import 'features/inventory/presentation/home/pages/settings_page.dart';
 import 'features/inventory/presentation/providers/product_provider.dart';
+import 'splash_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -66,7 +68,7 @@ class MyApp extends StatelessWidget {
         title: AppConstants.appName,
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
-        home:  LoginScreen(),
+        home:  const SplashPage(),
         onGenerateRoute: (settings) {
           switch (settings.name) {
             case '/add-product':
@@ -74,6 +76,21 @@ class MyApp extends StatelessWidget {
               return MaterialPageRoute(
                 builder: (_) => AddEditProductPage(product: product),
               );
+            case '/products':
+              final showLowStockOnly = settings.arguments as bool? ?? false;
+              return MaterialPageRoute(
+                builder: (_) => ProductsListPage(showLowStockOnly: showLowStockOnly),
+              );
+            case '/settings':
+              return MaterialPageRoute(
+                builder: (_) => const SettingsPage(),
+              );
+            case '/developer-support':
+              return MaterialPageRoute(
+                builder: (_) => const DeveloperSupportPage(),
+              );
+            case '/':
+              return MaterialPageRoute(builder: (_) => const DashboardPage());
             default:
               return MaterialPageRoute(builder: (_) => const DashboardPage());
           }

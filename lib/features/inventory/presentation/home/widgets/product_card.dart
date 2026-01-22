@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import '../../domain/entities/product_entity.dart';
+import '../../../domain/entities/product_entity.dart';
 
 /// Product card widget for displaying product information
 class ProductCard extends StatelessWidget {
@@ -99,10 +99,14 @@ class ProductCard extends StatelessWidget {
                         const SizedBox(width: 8),
                         Text('|', style: TextStyle(color: Colors.grey[400])),
                         const SizedBox(width: 8),
-                        Text(
-                          'Selling: ${currencyFormat.format(product.sellingPrice)}',
-                          style: Theme.of(context).textTheme.bodySmall
-                              ?.copyWith(color: Colors.grey[600]),
+                        Expanded(
+                          child: Text(
+                            'Selling: ${currencyFormat.format(product.sellingPrice)}',
+                            style: Theme.of(context).textTheme.bodySmall
+                                ?.copyWith(color: Colors.grey[600]), 
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 1,
+                          ),
                         ),
                       ],
                     ),

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../providers/product_provider.dart';
+import '../../providers/product_provider.dart';
+import '../widgets/app_drawer.dart';
 import '../widgets/product_card.dart';
 
 /// Products list page showing all products or low stock products
@@ -20,6 +21,7 @@ class _ProductsListPageState extends State<ProductsListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const AppDrawer(),
       appBar: AppBar(
         title: Text(
           widget.showLowStockOnly ? 'Low Stock Products' : 'All Products',

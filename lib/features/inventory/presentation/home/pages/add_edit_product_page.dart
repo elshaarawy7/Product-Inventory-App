@@ -3,9 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
 
-import '../../../../core/utils/image_helper.dart';
-import '../../domain/entities/product_entity.dart';
-import '../providers/product_provider.dart';
+import '../../../../../core/utils/image_helper.dart';
+import '../../../domain/entities/product_entity.dart';
+import '../../providers/product_provider.dart';
 import '../widgets/image_picker_widget.dart';
 
 /// Add or Edit product page

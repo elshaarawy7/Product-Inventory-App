@@ -6,12 +6,10 @@ class AppTheme {
   AppTheme._();
 
   // Color Palette
-  static const Color primaryColor = Color(0xFF6366F1); // Indigo
-  static const Color secondaryColor = Color(0xFF8B5CF6); // Purple
-  static const Color accentColor = Color(0xFF10B981); // Green
+  static const Color primaryColor = Colors.green; // Indigo
+  static const Color secondaryColor = Colors.blue; // Purple
   static const Color errorColor = Color(0xFFEF4444); // Red
   static const Color warningColor = Color(0xFFF59E0B); // Amber
-  static const Color successColor = Color(0xFF10B981); // Green
 
   static const Color backgroundColor = Color(0xFFF9FAFB);
   static const Color surfaceColor = Colors.white;

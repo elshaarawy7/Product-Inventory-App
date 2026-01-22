@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:product_inventory_app/core/theme/app_theme.dart';
 
 class CustomButtonAuth extends StatelessWidget {
   final String text;
@@ -10,18 +11,21 @@ class CustomButtonAuth extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.white, // لون الخلفية
-        foregroundColor: Colors.green, // لون النص
-        padding: EdgeInsets.symmetric(horizontal: 80, vertical: 25),
+        backgroundColor: AppTheme.primaryColor,
+        foregroundColor: Colors.white,
+        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+        elevation: 2,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
-          side: BorderSide(color: Colors.green),
+          borderRadius: BorderRadius.circular(12),
         ),
       ),
       onPressed: onPressed,
       child: Text(
         text,
-        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        style: const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
+        ),
       ),
     );
   }
